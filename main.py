@@ -43,7 +43,7 @@ def download(urls):
 
 
 def main():
-    # clone()
+    clone()
     urls = parse_json()
     download(urls)
 
