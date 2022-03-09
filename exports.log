@@ -1,0 +1,7 @@
+This is just a temporary file housing the values of some enviornment variables.
+Run this prior to running the code.
+
+export ASSETS_DIR="data"
+export ASSETS_FILE="assets.json"
+export BRANCH="main"
+export REPO="git@github.com:WMLA-V1-ANZ-POC/assets.git"
