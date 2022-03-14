@@ -3,6 +3,7 @@ import git
 import json
 import wget
 import shutil
+import requests
 import tempfile
 from pathlib import Path
 
@@ -39,7 +40,9 @@ def download(urls):
         file_name = url[url.rindex('/')+1:]
         file_path = Path(os.path.join(os.getenv("NFS"), file_name))
         if not file_path.is_file():
-            wget.download(url, os.getenv("NFS"))
+            # wget.download(url, os.getenv("NFS"))
+            response = requests.get(url)
+            open(os.path.join(os.getenv("NFS"), file_name), 'wb').write(response.content)
 
 
 def clean():
