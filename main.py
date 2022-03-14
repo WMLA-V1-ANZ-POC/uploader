@@ -37,15 +37,20 @@ def parse_json():
 def download(urls):
     for url in urls:
         file_name = url[url.rindex('/')+1:]
-        file_path = Path(os.path.join("/tmp", file_name))
+        file_path = Path(os.path.join(os.getenv("NFS"), file_name))
         if not file_path.is_file():
-            wget.download(url, "/tmp")
+            wget.download(url, os.getenv("NFS"))
+
+
+def clean():
+    os.remove(os.path.join("/tmp", os.getenv("ASSETS_FILE")))
 
 
 def main():
     clone()
     urls = parse_json()
     download(urls)
+    clean()
 
 
 if __name__ == "__main__":
