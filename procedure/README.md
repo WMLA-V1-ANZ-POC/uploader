@@ -24,4 +24,6 @@ By the same token, only authenticated users (this could be the same or a differe
 
 As stated above, provided the constraints are satisifed. The PR will be merged. The new asset metadata is now present in the repository.
 
-## 
+## 4 - Poll Repository Periodically
+
+A cron job running periodically executes a python script which polls the repository, checks for the presence of new metadata, downloads the relevant asset(s) (the metadata is a pointer to the actual location of the asset housed in Artifactory) and writes the contents to the shared drive, now accessible by the NFS clients.
