@@ -8,13 +8,13 @@ In addition, an artificatory instance was deployed.
 
 Note, both our mock GPU based instances and artificatory are deployed in IBM Cloud in the same VPN and Subnet. Abiding by the principles of least privilege, the VM's can only talk to one another and artifactory. Only admins (me in this case) are allowed to SSH in the respective instances.
 
-I am referencing the image given below.
+Subsections 1 through to 5 below reference the image given below.
 
 ![Alt text](./wmla-v1-poc-anz.png?raw=true "Title")
 
 ## 1 - Upload Asset
 
-This was designed with security in mind. As such, only users with sufficient prviileges are allowed to upload the assets to the internal artifactory (By assets, I mean Machine Learning related files for training/validation/testing purposes).
+This was designed with security in mind. As such, only users with sufficient privileges are allowed to upload the assets to the internal artifactory (By assets, I mean Machine Learning related files for training/validation/testing purposes).
 
 ## 2 - Submit PR
 
