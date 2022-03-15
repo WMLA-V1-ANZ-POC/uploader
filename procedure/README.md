@@ -41,10 +41,10 @@ Finally, as the name implies, the downloaded asset is written to the intended lo
 
 ## Summary
 
-From an end user perspective, proviced both the asset is to be uploaded to artifactory and the corresponding pull request is merged, the asset should be present in the server shortly thereafter. Note, we can remove Git (it is essentially acting as a "middle man" here) and directly query artifactory. That said, using Git as the source of truth would likely negate any auditing and compliance concerns.
+From an end user perspective, provided both the asset is uploaded to artifactory and the corresponding pull request is merged, said asset should be present in the server shortly thereafter. Note, we can remove Git (it is essentially acting as a "middle man" here) and directly query artifactory. That said, using Git as the source of truth would likely address any auditing and compliance concerns.
 
 ## Extensions
 
-Right now, to troubleshoot any runtime errors (very unlikely to occur due to the nature of this task), one must inspect crond runtime logs in the server (/var/log/cron; don't quote me on this). This is probably not a dealbreaker, as this is expected to run smoothly. That said, if advanced reporting was required, extra work must be done (Eg, parsing and forwarding the cron logs to a group of users via, say, SMTP).
+Right now, to troubleshoot any runtime errors (very unlikely to occur due to the nature of a relatively simple task), one must inspect crond runtime logs in the server (/var/log/cron; don't quote me on this). This is probably not a dealbreaker, as this is expected to run smoothly. That said, if advanced reporting was required, extra work must be done (Eg, parsing and forwarding the cron logs to a group of users via, say, SMTP).
 
 Finally, I am using a simple python client (nothing wrong with that for a POC). A fully-fledged production solution may emply automation agents such as Ansible. Error checking, leveraging existing modules, custom retry policies, ensuring idemponecy, debugging and logging are provided out of the box. 
